@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\Владимир\.Rider2019.2\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Владимир\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_Masks.1457435572.00" t="ExcludeRecursive" />
+    <e p="C:\Users\Владимир\RiderProjects\Masks" t="IncludeFlat">
+      <e p="Masks" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="GeneratorBehaviours" t="Include">
+          <e p="AsymmetryGeneratorBehaviour.cs" t="Include" />
+          <e p="IGeneratorBehaviour.cs" t="Include" />
+          <e p="RandomGeneratorBehaviour.cs" t="Include" />
+          <e p="SymmetryGeneratorBehaviour.cs" t="Include" />
+        </e>
+        <e p="ImageModel.cs" t="Include" />
+        <e p="Mask.cs" t="Include" />
+        <e p="MaskGenerator.cs" t="Include" />
+        <e p="MaskPixel.cs" t="Include" />
+        <e p="Masks.csproj" t="IncludeRecursive" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netstandard2.0" t="Include">
+              <e p="Masks.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Pixel.cs" t="Include" />
+      </e>
+      <e p="Masks.sln" t="IncludeFlat" />
+      <e p="packages" t="ExcludeRecursive" />
+    </e>
+  </component>
+</project>

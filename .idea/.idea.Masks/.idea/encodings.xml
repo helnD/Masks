@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" addBOMForNewFiles="with BOM under Windows, with no BOM otherwise">
+    <file url="file://$PROJECT_DIR$/Masks/GeneratorBehaviours/AsymmetryGeneratorBehaviour.cs" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/Masks/GeneratorBehaviours/IGeneratorBehaviour.cs" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/Masks/GeneratorBehaviours/RandomGeneratorBehaviour.cs" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/Masks/IPixelContainer.cs" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/Masks/ImageModel.cs" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/Masks/MaskGenerator.cs" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/Masks/MaskPixel.cs" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/Masks/Pixel.cs" charset="windows-1251" />
+  </component>
+</project>

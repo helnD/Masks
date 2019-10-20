@@ -17,16 +17,17 @@ namespace Domain
 	public class MaskPixel
     {
 
-		public int Value { get; set; } 
-		public int X { get; set; } 
-		public int Y { get; set; } 
+		public int Value { get; } 
+		public int X { get; } 
+		public int Y { get; } 
 
-		public MaskPixel()
-        {
-
+		public MaskPixel(int x, int y, int value)
+		{
+			Y = y;
+			X = x;
+			Value = value;
 		}
 
-
-	} 
+    } 
 
 } 

@@ -17,12 +17,7 @@ namespace Domain
 	public class MaskGenerator
     {
 
-		public IGeneratorBehaviour GeneratorBehaviour { get; set; } 
-
-		public MaskGenerator()
-        {
-
-		}
+		public IGeneratorBehaviour GeneratorBehaviour { get; set; }
 
 		public Mask Generate()
         {

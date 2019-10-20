@@ -16,13 +16,15 @@ namespace Domain
 {
 	public class Pixel {
 
-		public int Color { get; set; } 
-		public int X { get; set; } 
-		public int Y { get; set; } 
+		public int Color { get; } 
+		public int X { get; } 
+		public int Y { get; } 
 
-		public Pixel()
-        {
-
+		public Pixel(int x, int y, int color)
+		{
+			Y = y;
+			X = x;
+			Color = color;
 		}
 
 	}

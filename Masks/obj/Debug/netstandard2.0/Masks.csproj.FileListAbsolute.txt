@@ -1,0 +1,9 @@
+C:\Users\Владимир\RiderProjects\Masks\Masks\bin\Debug\netstandard2.0\Masks.deps.json
+C:\Users\Владимир\RiderProjects\Masks\Masks\bin\Debug\netstandard2.0\Masks.dll
+C:\Users\Владимир\RiderProjects\Masks\Masks\bin\Debug\netstandard2.0\Masks.pdb
+C:\Users\Владимир\RiderProjects\Masks\Masks\obj\Debug\netstandard2.0\Masks.csprojAssemblyReference.cache
+C:\Users\Владимир\RiderProjects\Masks\Masks\obj\Debug\netstandard2.0\Masks.csproj.CoreCompileInputs.cache
+C:\Users\Владимир\RiderProjects\Masks\Masks\obj\Debug\netstandard2.0\Masks.AssemblyInfoInputs.cache
+C:\Users\Владимир\RiderProjects\Masks\Masks\obj\Debug\netstandard2.0\Masks.AssemblyInfo.cs
+C:\Users\Владимир\RiderProjects\Masks\Masks\obj\Debug\netstandard2.0\Masks.dll
+C:\Users\Владимир\RiderProjects\Masks\Masks\obj\Debug\netstandard2.0\Masks.pdb
