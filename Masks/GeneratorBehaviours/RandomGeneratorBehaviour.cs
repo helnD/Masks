@@ -18,8 +18,36 @@ namespace Domain
     {
 	    public Mask Generate()
         {
+            int x = 1;
+            int y = 1;
+            int numberOfColumns = 3;
+            int numberOfRows = 6;
+            int maxValue = 1000;
+            int minValue = -999;
+            bool isEven = true;
 
-			return null;
+            Random rnd = new Random();
+            Mask mask = new Mask(new List<MaskPixel>(), new MaskPixel(), new MaskPixel());
+
+            for (int i = 0; i < numberOfRows; i++)
+            {
+                if (i % 3 == 0)
+                {
+                    isEven = !isEven;
+                }
+                for (int j = 0; j < numberOfColumns; j++)
+                {
+                    if ((j % 2 == 0) != isEven)
+                    {
+                        int rndNumber = rnd.Next(minValue, maxValue);
+                        mask.Pixels.Add(new MaskPixel(i - x, j - y, rndNumber));
+                    }
+                }
+                isEven = !isEven;
+            }
+            mask.CentralMaskPixel = mask[0, 0];
+
+            return mask;
 		}
 
 	}

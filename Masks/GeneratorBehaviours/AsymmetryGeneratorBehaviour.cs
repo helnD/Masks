@@ -14,16 +14,32 @@ using System.IO;
 
 namespace Domain
 {
-
 	public class AsymmetryGeneratorBehaviour : IGeneratorBehaviour
     {
-
 	    public Mask Generate()
         {
+            int x = 0;
+            int y = 1;
+            int numberOfColumns = 6;
+            int numberOfRows = 2;
+            int maxValue = 1000;
+            int minValue = -999;
 
-			return null;
+            Random rnd = new Random();
+            Mask mask = new Mask(new List<MaskPixel>(), new MaskPixel(), new MaskPixel());
+
+            for (int i = 0; i < numberOfRows; i++)
+            {
+                for (int j = 0; j < numberOfColumns; j++)
+                {
+                    int rndNumber = rnd.Next(minValue, maxValue);
+                    mask.Pixels.Add(new MaskPixel(i - x, j - y, rndNumber));
+                }
+            }
+            mask.CentralMaskPixel = mask[0, 0];
+            mask.SymmetryCenter = null;
+
+            return mask;
 		}
-
 	}
-
 }
