@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp3.0</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Masks\Masks.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="MvvmLightLibs" Version="5.4.1.1" />
+    </ItemGroup>
+
+</Project>

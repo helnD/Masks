@@ -5,6 +5,10 @@ VisualStudioVersion = 15.0.27004.2010
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Masks", "Masks\Masks.csproj", "{8276127E-07D9-49BD-86DD-6895A51359BC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "View", "View\View.csproj", "{4125778C-91E8-436B-8C31-EB2407FBEB9D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ViewModel", "ViewModel\ViewModel.csproj", "{E863C7FE-55DA-4043-8F79-C2271E1DE425}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{8276127E-07D9-49BD-86DD-6895A51359BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8276127E-07D9-49BD-86DD-6895A51359BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8276127E-07D9-49BD-86DD-6895A51359BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4125778C-91E8-436B-8C31-EB2407FBEB9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4125778C-91E8-436B-8C31-EB2407FBEB9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4125778C-91E8-436B-8C31-EB2407FBEB9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4125778C-91E8-436B-8C31-EB2407FBEB9D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E863C7FE-55DA-4043-8F79-C2271E1DE425}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E863C7FE-55DA-4043-8F79-C2271E1DE425}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E863C7FE-55DA-4043-8F79-C2271E1DE425}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E863C7FE-55DA-4043-8F79-C2271E1DE425}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

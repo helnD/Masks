@@ -6,11 +6,9 @@
 //  Original author: Heln
 ///////////////////////////////////////////////////////////
 
-using System;
 using System.Collections.Generic;
-using System.Text;
-using System.IO;
 using System.Linq;
+using Domain.ApplyBehaviour;
 
 
 namespace Domain
@@ -18,12 +16,14 @@ namespace Domain
 
 	public class ImageModel
     {
-	    public ImageModel(List<Pixel> pixels)
+	    public ImageModel(List<Pixel> pixels = null)
 	    {
-		    Pixels = pixels;
+		    Pixels = pixels ?? new List<Pixel>();
 	    }
 
-	    List<Pixel> Pixels { get; }
+	    public List<Pixel> Pixels { get; }
+	    public IApplyBehaviour ApplyMaskBehaviour { get; set; }
+			= new NormalizationApplyBehaviour();
 
 		public ImageModel ApplyMask(Mask mask)
 		{
@@ -102,15 +102,9 @@ namespace Domain
 			return model;
 		}
 
-		private int ApplyToVirtualModel(int[][] model, int x, int y, Mask mask)
-		{
-			int sum = 0;
-			mask.Pixels.ForEach(it => sum += it.Value * model[x + it.X][y + it.Y]);
-
-			if (sum > 256) return sum / mask.Sum();
-			if (sum < 0) return 0;
-			else return sum;
-		}
+		private int ApplyToVirtualModel(int[][] model, int x, int y, Mask mask) =>
+			ApplyMaskBehaviour.Apply(model, x, y, mask);
+			
 
 		public int this[int index1, int index2] =>
 			Pixels.Single(it => it.X == index1 && it.Y == index2).Color;

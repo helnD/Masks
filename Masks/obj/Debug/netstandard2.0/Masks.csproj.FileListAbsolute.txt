@@ -7,3 +7,11 @@ C:\Users\Владимир\RiderProjects\Masks\Masks\obj\Debug\netstandard2.0\Mas
 C:\Users\Владимир\RiderProjects\Masks\Masks\obj\Debug\netstandard2.0\Masks.AssemblyInfo.cs
 C:\Users\Владимир\RiderProjects\Masks\Masks\obj\Debug\netstandard2.0\Masks.dll
 C:\Users\Владимир\RiderProjects\Masks\Masks\obj\Debug\netstandard2.0\Masks.pdb
+C:\Users\1\RiderProjects\Masks\Masks\bin\Debug\netstandard2.0\Masks.deps.json
+C:\Users\1\RiderProjects\Masks\Masks\bin\Debug\netstandard2.0\Masks.dll
+C:\Users\1\RiderProjects\Masks\Masks\bin\Debug\netstandard2.0\Masks.pdb
+C:\Users\1\RiderProjects\Masks\Masks\obj\Debug\netstandard2.0\Masks.csprojAssemblyReference.cache
+C:\Users\1\RiderProjects\Masks\Masks\obj\Debug\netstandard2.0\Masks.AssemblyInfoInputs.cache
+C:\Users\1\RiderProjects\Masks\Masks\obj\Debug\netstandard2.0\Masks.AssemblyInfo.cs
+C:\Users\1\RiderProjects\Masks\Masks\obj\Debug\netstandard2.0\Masks.dll
+C:\Users\1\RiderProjects\Masks\Masks\obj\Debug\netstandard2.0\Masks.pdb

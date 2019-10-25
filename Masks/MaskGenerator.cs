@@ -19,12 +19,9 @@ namespace Domain
 
 		public IGeneratorBehaviour GeneratorBehaviour { get; set; }
 
-		public Mask Generate()
-        {
+		public Mask Generate() =>
+			GeneratorBehaviour.Generate();
 
-			return null;
-		}
-
-	}
+    }
 
 }
