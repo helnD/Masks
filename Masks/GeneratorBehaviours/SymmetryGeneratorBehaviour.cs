@@ -10,6 +10,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.IO;
+using System.Linq;
 
 
 namespace Domain
@@ -25,7 +26,7 @@ namespace Domain
             int minValue = -999;
 
             Random rnd = new Random();
-            Mask mask = new Mask(new List<MaskPixel>(), new MaskPixel(), new MaskPixel());
+            List<MaskPixel> pixels = new List<MaskPixel>();
 
             for (int i = 0; i < (numberOfColumns / 2) + 1; i++)
             {
@@ -34,14 +35,14 @@ namespace Domain
                     int rndNumber = rnd.Next(minValue, maxValue);
                     if (i != x || j != y)
                     {
-                        mask.Pixels.AddRange(new List<MaskPixel>
+                        pixels.AddRange(new List<MaskPixel>
                         {
                             new MaskPixel(i, j, rndNumber),
                             new MaskPixel(numberOfColumns - i - 1, numberOfColumns - j - 1, rndNumber)
                         });
                         if (i != numberOfColumns - i - 1 && j != numberOfColumns - j - 1)
                         {
-                            mask.Pixels.AddRange(new List<MaskPixel>
+                            pixels.AddRange(new List<MaskPixel>
                             {
                                 new MaskPixel(numberOfColumns - i - 1, j, rndNumber),
                                 new MaskPixel(i, numberOfColumns - j - 1, rndNumber)
@@ -49,14 +50,14 @@ namespace Domain
                         }
                         if (i != j)
                         {
-                            mask.Pixels.AddRange(new List<MaskPixel>
+                            pixels.AddRange(new List<MaskPixel>
                             {
                                 new MaskPixel(j, i, rndNumber),
                                 new MaskPixel(numberOfColumns - j - 1, numberOfColumns - i - 1, rndNumber)
                             });
                             if (i != numberOfColumns - i - 1 && j != numberOfColumns - j - 1)
                             {
-                                mask.Pixels.AddRange(new List<MaskPixel>
+                                pixels.AddRange(new List<MaskPixel>
                                 {
                                     new MaskPixel(numberOfColumns - j - 1, i, rndNumber),
                                     new MaskPixel(j, numberOfColumns - i - 1, rndNumber)
@@ -66,15 +67,14 @@ namespace Domain
                     }
                     else if (i == x && j == y)
                     {
-                        mask.Pixels.Add(new MaskPixel(i, j, rndNumber));
-                        mask.CentralMaskPixel = new MaskPixel(i, j, rndNumber);
-                        mask.SymmetryCenter = new MaskPixel(i, j, rndNumber);
+                        pixels.Add(new MaskPixel(i, j, rndNumber));
                     }
                 }
             }
-            mask.Pixels = mask.Pixels.Select(pixel => pixel.X -= x).Select(pixel => pixel.Y -= y);
+            List<MaskPixel> maskPixels = new List<MaskPixel>();
+            maskPixels.AddRange(pixels.Select(it => new MaskPixel(it.X - x, it.Y - y, it.Value)));
 
-            return mask;
+            return new Mask(maskPixels);
 		}
-	}
+    }
 } 

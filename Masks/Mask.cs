@@ -17,18 +17,14 @@ namespace Domain
 {
 	public class Mask
     {
-	    public Mask(List<MaskPixel> pixels/*, MaskPixel centralMaskPixel, MaskPixel symmetryCenter*/)
+	    public Mask(List<MaskPixel> pixels)
 	    {
 		    Pixels = pixels;
-//			CentralMaskPixel = centralMaskPixel;
-//			SymmetryCenter = symmetryCenter;
 	    }
 
         public List<MaskPixel> Pixels { get; }
-//        public MaskPixel CentralMaskPixel { get; } 
-//		public MaskPixel SymmetryCenter { get; } 
 
-		public int Sum() => Pixels.Sum(x => x.Value);
+        public int Sum() => Pixels.Sum(x => x.Value);
 		
 		public int this[int index1, int index2] =>
 			Pixels.Single(it => it.X == index1 && it.Y == index2).Value;

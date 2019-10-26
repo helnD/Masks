@@ -26,7 +26,7 @@ namespace Domain
             int minValue = -999;
 
             Random rnd = new Random();
-            Mask mask = new Mask(new List<MaskPixel>(), new MaskPixel(), new MaskPixel());
+            Mask mask = new Mask(new List<MaskPixel>());
 
             for (int i = 0; i < numberOfRows; i++)
             {
@@ -36,8 +36,6 @@ namespace Domain
                     mask.Pixels.Add(new MaskPixel(i - x, j - y, rndNumber));
                 }
             }
-            mask.CentralMaskPixel = mask[0, 0];
-            mask.SymmetryCenter = null;
 
             return mask;
 		}
