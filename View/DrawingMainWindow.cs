@@ -83,6 +83,15 @@ namespace View
         private void ClearCanvasButton_OnPreviewMouseDown(object sender, MouseButtonEventArgs e)
         {
             DrawCanvas.Children.Clear();
+            
+            var context = DataContext as MainViewModel;
+            for (int i = 0; i < 20; i++)
+            {
+                for (int j = 0; j < 20; j++)
+                {
+                    context.SourceModel[i][j] = 255;
+                }
+            }
         }
     }
 }

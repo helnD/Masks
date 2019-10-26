@@ -29,6 +29,11 @@ namespace ViewModel
             {
                 SourceModel[i] = new int[20];
                 ResultModel[i] = new int[20];
+
+                for (int j = 0; j < 20; j++)
+                {
+                    SourceModel[i][j] = 255;
+                }
             }
             
             ApplyCommand = new RelayCommand(ApplyMask);
