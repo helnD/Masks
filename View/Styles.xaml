@@ -138,6 +138,7 @@
                                     <ScaleTransform CenterX="11" CenterY="11" ScaleX="0.8" ScaleY="0.8"/>
                                 </Setter.Value>
                             </Setter>
+                            <Setter TargetName="Border" Property="Padding" Value="2.2"></Setter>
                         </Trigger>
                         <Trigger Property="IsPressed" Value="true">
                             <Setter TargetName="Border" Property="RenderTransform">

@@ -1,25 +1,26 @@
 ﻿{
   "version": "1.0.0",
   "restore": {
-    "projectUniqueName": "C:\\Users\\1\\RiderProjects\\Masks\\View\\View.csproj",
+    "projectUniqueName": "D:\\Учеба\\ТОИ\\lab8\\last_try\\View\\View.csproj",
     "projectName": "View",
-    "projectPath": "C:\\Users\\1\\RiderProjects\\Masks\\View\\View.csproj",
-    "outputPath": "C:\\Users\\1\\RiderProjects\\Masks\\View\\obj\\",
+    "projectPath": "D:\\Учеба\\ТОИ\\lab8\\last_try\\View\\View.csproj",
+    "outputPath": "D:\\Учеба\\ТОИ\\lab8\\last_try\\View\\obj\\",
     "projectStyle": "PackageReference",
     "originalTargetFrameworks": [
       "netcoreapp3.0"
     ],
     "sources": {
+      "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
       "https://api.nuget.org/v3/index.json": {}
     },
     "frameworks": {
       "netcoreapp3.0": {
         "projectReferences": {
-          "C:\\Users\\1\\RiderProjects\\Masks\\Masks\\Masks.csproj": {
-            "projectPath": "C:\\Users\\1\\RiderProjects\\Masks\\Masks\\Masks.csproj"
+          "D:\\Учеба\\ТОИ\\lab8\\last_try\\Masks\\Masks.csproj": {
+            "projectPath": "D:\\Учеба\\ТОИ\\lab8\\last_try\\Masks\\Masks.csproj"
           },
-          "C:\\Users\\1\\RiderProjects\\Masks\\ViewModel\\ViewModel.csproj": {
-            "projectPath": "C:\\Users\\1\\RiderProjects\\Masks\\ViewModel\\ViewModel.csproj"
+          "D:\\Учеба\\ТОИ\\lab8\\last_try\\ViewModel\\ViewModel.csproj": {
+            "projectPath": "D:\\Учеба\\ТОИ\\lab8\\last_try\\ViewModel\\ViewModel.csproj"
           }
         }
       }

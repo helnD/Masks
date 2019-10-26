@@ -15,3 +15,11 @@ C:\Users\1\RiderProjects\Masks\Masks\obj\Debug\netstandard2.0\Masks.AssemblyInfo
 C:\Users\1\RiderProjects\Masks\Masks\obj\Debug\netstandard2.0\Masks.AssemblyInfo.cs
 C:\Users\1\RiderProjects\Masks\Masks\obj\Debug\netstandard2.0\Masks.dll
 C:\Users\1\RiderProjects\Masks\Masks\obj\Debug\netstandard2.0\Masks.pdb
+D:\Учеба\ТОИ\lab8\last_try\Masks\bin\Debug\netstandard2.0\Masks.deps.json
+D:\Учеба\ТОИ\lab8\last_try\Masks\bin\Debug\netstandard2.0\Masks.dll
+D:\Учеба\ТОИ\lab8\last_try\Masks\bin\Debug\netstandard2.0\Masks.pdb
+D:\Учеба\ТОИ\lab8\last_try\Masks\obj\Debug\netstandard2.0\Masks.csprojAssemblyReference.cache
+D:\Учеба\ТОИ\lab8\last_try\Masks\obj\Debug\netstandard2.0\Masks.AssemblyInfoInputs.cache
+D:\Учеба\ТОИ\lab8\last_try\Masks\obj\Debug\netstandard2.0\Masks.AssemblyInfo.cs
+D:\Учеба\ТОИ\lab8\last_try\Masks\obj\Debug\netstandard2.0\Masks.dll
+D:\Учеба\ТОИ\lab8\last_try\Masks\obj\Debug\netstandard2.0\Masks.pdb

@@ -1,22 +1,23 @@
 ﻿{
   "version": "1.0.0",
   "restore": {
-    "projectUniqueName": "C:\\Users\\1\\RiderProjects\\Masks\\ViewModel\\ViewModel.csproj",
+    "projectUniqueName": "D:\\Учеба\\ТОИ\\lab8\\last_try\\ViewModel\\ViewModel.csproj",
     "projectName": "ViewModel",
-    "projectPath": "C:\\Users\\1\\RiderProjects\\Masks\\ViewModel\\ViewModel.csproj",
-    "outputPath": "C:\\Users\\1\\RiderProjects\\Masks\\ViewModel\\obj\\",
+    "projectPath": "D:\\Учеба\\ТОИ\\lab8\\last_try\\ViewModel\\ViewModel.csproj",
+    "outputPath": "D:\\Учеба\\ТОИ\\lab8\\last_try\\ViewModel\\obj\\",
     "projectStyle": "PackageReference",
     "originalTargetFrameworks": [
       "netcoreapp3.0"
     ],
     "sources": {
+      "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
       "https://api.nuget.org/v3/index.json": {}
     },
     "frameworks": {
       "netcoreapp3.0": {
         "projectReferences": {
-          "C:\\Users\\1\\RiderProjects\\Masks\\Masks\\Masks.csproj": {
-            "projectPath": "C:\\Users\\1\\RiderProjects\\Masks\\Masks\\Masks.csproj"
+          "D:\\Учеба\\ТОИ\\lab8\\last_try\\Masks\\Masks.csproj": {
+            "projectPath": "D:\\Учеба\\ТОИ\\lab8\\last_try\\Masks\\Masks.csproj"
           }
         }
       }
