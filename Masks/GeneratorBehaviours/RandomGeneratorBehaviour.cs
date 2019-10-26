@@ -40,7 +40,7 @@ namespace Domain
                     if ((j % 2 == 0) != isEven)
                     {
                         int rndNumber = rnd.Next(minValue, maxValue);
-                        mask.Pixels.Add(new MaskPixel(i - x, j - y, rndNumber));
+                        mask.Pixels.Add(new MaskPixel(j - x, i - y, rndNumber));
                     }
                 }
                 isEven = !isEven;

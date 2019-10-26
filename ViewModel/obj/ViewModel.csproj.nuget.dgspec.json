@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Учеба\\ТОИ\\lab8\\last_try\\ViewModel\\ViewModel.csproj": {}
+    "C:\\Users\\1\\RiderProjects\\Masks\\ViewModel\\ViewModel.csproj": {}
   },
   "projects": {
-    "D:\\Учеба\\ТОИ\\lab8\\last_try\\Masks\\Masks.csproj": {
+    "C:\\Users\\1\\RiderProjects\\Masks\\Masks\\Masks.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Учеба\\ТОИ\\lab8\\last_try\\Masks\\Masks.csproj",
+        "projectUniqueName": "C:\\Users\\1\\RiderProjects\\Masks\\Masks\\Masks.csproj",
         "projectName": "Masks",
-        "projectPath": "D:\\Учеба\\ТОИ\\lab8\\last_try\\Masks\\Masks.csproj",
-        "packagesPath": "C:\\Users\\Виктория\\.nuget\\packages\\",
-        "outputPath": "D:\\Учеба\\ТОИ\\lab8\\last_try\\Masks\\obj\\",
+        "projectPath": "C:\\Users\\1\\RiderProjects\\Masks\\Masks\\Masks.csproj",
+        "packagesPath": "C:\\Users\\1\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\1\\RiderProjects\\Masks\\Masks\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Виктория\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\1\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netstandard2.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -58,31 +56,29 @@
         }
       }
     },
-    "D:\\Учеба\\ТОИ\\lab8\\last_try\\ViewModel\\ViewModel.csproj": {
+    "C:\\Users\\1\\RiderProjects\\Masks\\ViewModel\\ViewModel.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Учеба\\ТОИ\\lab8\\last_try\\ViewModel\\ViewModel.csproj",
+        "projectUniqueName": "C:\\Users\\1\\RiderProjects\\Masks\\ViewModel\\ViewModel.csproj",
         "projectName": "ViewModel",
-        "projectPath": "D:\\Учеба\\ТОИ\\lab8\\last_try\\ViewModel\\ViewModel.csproj",
-        "packagesPath": "C:\\Users\\Виктория\\.nuget\\packages\\",
-        "outputPath": "D:\\Учеба\\ТОИ\\lab8\\last_try\\ViewModel\\obj\\",
+        "projectPath": "C:\\Users\\1\\RiderProjects\\Masks\\ViewModel\\ViewModel.csproj",
+        "packagesPath": "C:\\Users\\1\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\1\\RiderProjects\\Masks\\ViewModel\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Виктория\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\1\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.0": {
             "projectReferences": {
-              "D:\\Учеба\\ТОИ\\lab8\\last_try\\Masks\\Masks.csproj": {
-                "projectPath": "D:\\Учеба\\ТОИ\\lab8\\last_try\\Masks\\Masks.csproj"
+              "C:\\Users\\1\\RiderProjects\\Masks\\Masks\\Masks.csproj": {
+                "projectPath": "C:\\Users\\1\\RiderProjects\\Masks\\Masks\\Masks.csproj"
               }
             }
           }

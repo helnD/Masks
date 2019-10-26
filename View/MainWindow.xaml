@@ -21,7 +21,7 @@
                 <DropShadowEffect Color="#FF303030"/>
             </Canvas.Effect>
             <Canvas.Background>
-                <ImageBrush ImageSource="file:///D:/Учеба/ТОИ/test_lab8/grid1.png"/>
+                <ImageBrush ImageSource="res/img/grid1.png"/>
             </Canvas.Background>
         </Canvas>
         <Canvas x:Name="ResultCanvas" HorizontalAlignment="Left" Height="350" VerticalAlignment="Top" Width="350" Grid.Row="1" Grid.Column="2">
@@ -29,7 +29,7 @@
                 <DropShadowEffect Color="#FF303030"/>
             </Canvas.Effect>
             <Canvas.Background>
-                <ImageBrush ImageSource="file:///D:/Учеба/ТОИ/test_lab8/grid1.png"/>
+                <ImageBrush ImageSource="res/img/grid1.png"/>
             </Canvas.Background>
         </Canvas>
         <Label Content="Result:" VerticalAlignment="Top" Padding="10,5,0,0" Foreground="#FFD4D4D4" Height="34" Grid.Column="2" Background="#FF171717" VerticalContentAlignment="Center">
@@ -151,12 +151,12 @@
                     </Grid>
                     <Button Content="" Style="{DynamicResource ReloadButtonStyle}" HorizontalAlignment="Left" Margin="220,190,0,0" VerticalAlignment="Top" Width="22" Height="22" BorderBrush="{x:Null}">
                         <Button.Background>
-                            <ImageBrush ImageSource="file:///D:/Учеба/ТОИ/test_lab8/refresh-button.png"/>
+                            <ImageBrush ImageSource="res/img/refresh-button.png"/>
                         </Button.Background>
                     </Button>
                     <Button Content="" Style="{DynamicResource ClearButtonStyle}" HorizontalAlignment="Left" Margin="220,220,0,0" VerticalAlignment="Top" Width="22" Height="22" BorderBrush="{x:Null}">
                         <Button.Background>
-                            <ImageBrush ImageSource="file:///D:/Учеба/ТОИ/test_lab8/cross.png"/>
+                            <ImageBrush ImageSource="res/img/cross.png"/>
                         </Button.Background>
                     </Button>
                     <RadioButton Content="Irregular Mask" Padding="15,0,0,0" HorizontalAlignment="Left" Margin="20,253,0,0" VerticalAlignment="Top" Width="208" Height="20" Background="White" BorderBrush="White" VerticalContentAlignment="Center">
@@ -166,12 +166,12 @@
                     </RadioButton>
                     <Button x:Name="GenerateMaskButton" Content="" Style="{DynamicResource ReloadButtonStyle}" HorizontalAlignment="Left" Margin="192,65,0,0" VerticalAlignment="Top" Width="22" Height="22" BorderBrush="{x:Null}">
                         <Button.Background>
-                            <ImageBrush ImageSource="file:///D:/Учеба/ТОИ/test_lab8/refresh-button.png"/>
+                            <ImageBrush ImageSource="res/img/refresh-button.png"/>
                         </Button.Background>
                     </Button>
                     <Button Content="" Style="{DynamicResource ClearButtonStyle}" HorizontalAlignment="Left" Margin="192,95,0,0" VerticalAlignment="Top" Width="22" Height="22" BorderBrush="{x:Null}">
                         <Button.Background>
-                            <ImageBrush ImageSource="file:///D:/Учеба/ТОИ/test_lab8/cross.png"/>
+                            <ImageBrush ImageSource="res/img/cross.png"/>
                         </Button.Background>
                     </Button>
                     <Grid x:Name="IrregularMaskGrid" HorizontalAlignment="Left" Height="156" Margin="51,284,0,0" VerticalAlignment="Top" Width="78">
@@ -208,27 +208,27 @@
                     </Grid>
                     <Button Content="" Style="{DynamicResource ReloadButtonStyle}" HorizontalAlignment="Left" Margin="145,337,0,0" VerticalAlignment="Top" Width="22" Height="22" BorderBrush="{x:Null}">
                         <Button.Background>
-                            <ImageBrush ImageSource="file:///D:/Учеба/ТОИ/test_lab8/refresh-button.png"/>
+                            <ImageBrush ImageSource="res/img/refresh-button.png"/>
                         </Button.Background>
                     </Button>
                     <Button Content="" Style="{DynamicResource ClearButtonStyle}" HorizontalAlignment="Left" Margin="145,367,0,0" VerticalAlignment="Top" Width="22" Height="22" BorderBrush="{x:Null}">
                         <Button.Background>
-                            <ImageBrush ImageSource="file:///D:/Учеба/ТОИ/test_lab8/cross.png"/>
+                            <ImageBrush ImageSource="res/img/cross.png"/>
                         </Button.Background>
                     </Button>
                     <Button Content="" Style="{DynamicResource RestoreButtonStyle}" HorizontalAlignment="Left" Margin="220,78,0,0" VerticalAlignment="Top" Width="26" Height="26" BorderBrush="{x:Null}">
                         <Button.Background>
-                            <ImageBrush ImageSource="file:///D:/Учеба/ТОИ/test_lab8/restore.png"/>
+                            <ImageBrush ImageSource="res/img/restore.png"/>
                         </Button.Background>
                     </Button>
                     <Button Content="" Style="{DynamicResource RestoreButtonStyle}" HorizontalAlignment="Left" Margin="247,204,-6,0" VerticalAlignment="Top" Width="26" Height="26" BorderBrush="{x:Null}">
                         <Button.Background>
-                            <ImageBrush ImageSource="file:///D:/Учеба/ТОИ/test_lab8/restore.png"/>
+                            <ImageBrush ImageSource="res/img/restore.png"/>
                         </Button.Background>
                     </Button>
                     <Button Content="" Style="{DynamicResource RestoreButtonStyle}" HorizontalAlignment="Left" Margin="174,350,0,0" VerticalAlignment="Top" Width="26" Height="26" BorderBrush="{x:Null}">
                         <Button.Background>
-                            <ImageBrush ImageSource="file:///D:/Учеба/ТОИ/test_lab8/restore.png"/>
+                            <ImageBrush ImageSource="res/img/restore.png"/>
                         </Button.Background>
                     </Button>
                 </Grid>

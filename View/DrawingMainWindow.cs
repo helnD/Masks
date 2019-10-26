@@ -22,13 +22,14 @@ namespace View
             double marginTop = (int)(y / sizeY) * sizeY;
 
             var context = DataContext as MainViewModel;
-            var clr = (byte) context.BrushBrightness;
-
+            var color = (byte) context.BrushBrightness;
+            context.SourceModel[(int) (y / sizeY)][(int) (x / sizeX)] = color;
+            
             Rectangle rect = new Rectangle
             {
                 Height = canvas.Height / numberOfRows,
                 Width = canvas.Width / numberOfColumns,
-                Fill = new SolidColorBrush(Color.FromRgb(clr, clr, clr)),
+                Fill = new SolidColorBrush(Color.FromRgb(color, color, color)),
                 Margin = new Thickness(marginLeft, marginTop, 0, 0)
             };
 

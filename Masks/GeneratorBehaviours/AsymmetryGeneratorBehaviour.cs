@@ -18,8 +18,8 @@ namespace Domain
     {
 	    public Mask Generate()
         {
-            int x = 0;
-            int y = 1;
+            int x = 1;
+            int y = 0;
             int numberOfColumns = 6;
             int numberOfRows = 2;
             int maxValue = 1000;
@@ -33,7 +33,7 @@ namespace Domain
                 for (int j = 0; j < numberOfColumns; j++)
                 {
                     int rndNumber = rnd.Next(minValue, maxValue);
-                    mask.Pixels.Add(new MaskPixel(i - x, j - y, rndNumber));
+                    mask.Pixels.Add(new MaskPixel(j - x, i - y, rndNumber));
                 }
             }
 

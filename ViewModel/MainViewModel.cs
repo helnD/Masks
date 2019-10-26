@@ -13,44 +13,16 @@ namespace ViewModel
         public MainViewModel()
         {
             //Инициализация значений симметричной маски
-            for (int i = 0; i < 5; i++)
-            {
-                SymmetricMask[i] = new Pixel[5];
-                for (int j = 0; j < 5; j++)
-                {
-                    //TODO(Надо поменять на генерацию симметричной маски)
-                    SymmetricMask[i][j] = new Pixel() {Value = new Random().Next(0, 25)};
-                }
-            }
+            _generator.GeneratorBehaviour = new SymmetryGeneratorBehaviour();
+            SymmetricMask = ToArrayMask(_generator.Generate());
             
             //Инициализация значчений асимметричной маски
-            for (int i = 0; i < 2; i++)
-            {
-                AsymmetricMask[i] = new Pixel[6];
-                for (int j = 0; j < 6; j++)
-                {
-                    //TODO(Надо поменять на генерацию асимметричной маски)
-                    AsymmetricMask[i][j] = new Pixel() {Value = new Random().Next(0, 25)};
-                }
-            }
-
-            //Инициализация значений нерегулярной маски
-            for (int i = 0; i < 6; i++)
-            {
-                RandomMask[i] = new Pixel[3];
-            }
+            _generator.GeneratorBehaviour = new AsymmetryGeneratorBehaviour();
+            AsymmetricMask = ToArrayMask(_generator.Generate());
             
-            //TODO(Надо поменять на генерацию нерегулярной маски)
-            RandomMask[0][0] = new Pixel() {Value = new Random().Next(0, 25)};
-            RandomMask[0][2] = new Pixel() {Value = new Random().Next(0, 25)};
-            RandomMask[1][1] = new Pixel() {Value = new Random().Next(0, 25)};
-            RandomMask[2][0] = new Pixel() {Value = new Random().Next(0, 25)};
-            RandomMask[2][2] = new Pixel() {Value = new Random().Next(0, 25)};
-            RandomMask[3][0] = new Pixel() {Value = new Random().Next(0, 25)};
-            RandomMask[3][2] = new Pixel() {Value = new Random().Next(0, 25)};
-            RandomMask[4][1] = new Pixel() {Value = new Random().Next(0, 25)};
-            RandomMask[5][0] = new Pixel() {Value = new Random().Next(0, 25)};
-            RandomMask[5][2] = new Pixel() {Value = new Random().Next(0, 25)};
+            //Инициализация значений нерегулярной маски
+            _generator.GeneratorBehaviour = new RandomGeneratorBehaviour();
+            RandomMask = ToArrayMask(_generator.Generate());
 
             //инициализация моделей изображений
             for (int i = 0; i < 20; i++)
@@ -115,6 +87,28 @@ namespace ViewModel
             }
             
             return new ImageModel(pixels);
+        }
+        
+        private Pixel[][] ToArrayMask(Mask mask)
+        {
+            int startX = mask.Pixels.Min(it => it.X);
+            int startY = mask.Pixels.Min(it => it.Y);
+
+            int width = mask.Pixels.Max(it => it.X) - startX + 1;
+            int height = mask.Pixels.Max(it => it.Y) - startY + 1;
+	        
+            Pixel[][] result = new Pixel[height][];
+            for (int y = 0; y < height; y++)
+            {
+                result[y] = new Pixel[width];
+            }
+	        
+            foreach (var pixel in mask.Pixels)
+            {
+                result[pixel.Y - startY][pixel.X - startX] = new Pixel() { Value = pixel.Value };
+            }
+
+            return result;
         }
 
         private MaskPixel ToMaskPixel(int x, int y, int value, int xCenter, int yCenter) =>
