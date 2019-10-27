@@ -91,12 +91,12 @@
                         <TextBox HorizontalAlignment="Left" Height="26" Text="{Binding AsymmetricMask[1][4].Value, Mode=TwoWay}" VerticalAlignment="Top" Width="26" FontSize="10" VerticalContentAlignment="Center" FontWeight="Light" MaxLength="4" HorizontalContentAlignment="Center" BorderBrush="{x:Null}" Grid.Column="4" Grid.Row="1"/>
                         <TextBox HorizontalAlignment="Left" Height="26" Text="{Binding AsymmetricMask[1][5].Value, Mode=TwoWay}" VerticalAlignment="Top" Width="26" FontSize="10" VerticalContentAlignment="Center" FontWeight="Light" MaxLength="4" HorizontalContentAlignment="Center" BorderBrush="{x:Null}" Grid.Column="5" Grid.Row="1"/>
                     </Grid>
-                    <RadioButton IsChecked="{Binding IsSymmetric}" Content="Symmetric Mask" Padding="15,0,0,0" HorizontalAlignment="Left" Margin="20,0,0,0" VerticalAlignment="Top" Width="208" Height="20" Background="White" BorderBrush="White" VerticalContentAlignment="Center" >
+                    <RadioButton IsChecked="{Binding IsSymmetric, Mode=TwoWay}" Content="Symmetric Mask" Padding="15,0,0,0" HorizontalAlignment="Left" Margin="20,0,0,0" VerticalAlignment="Top" Width="208" Height="20" Background="White" BorderBrush="White" VerticalContentAlignment="Center" >
                         <RadioButton.Foreground>
                             <SolidColorBrush Color="{DynamicResource MainTextColor}"/>
                         </RadioButton.Foreground>
                     </RadioButton>
-                    <RadioButton IsChecked="{Binding IsAsymmetric}" Content="Asymmetric Mask" Padding="15,0,0,0" HorizontalAlignment="Left" Margin="20,165,0,0" VerticalAlignment="Top" Width="208" Height="20" Background="White" BorderBrush="White" VerticalContentAlignment="Center">
+                    <RadioButton IsChecked="{Binding IsAsymmetric, Mode=TwoWay}" Content="Asymmetric Mask" Padding="15,0,0,0" HorizontalAlignment="Left" Margin="20,165,0,0" VerticalAlignment="Top" Width="208" Height="20" Background="White" BorderBrush="White" VerticalContentAlignment="Center">
                         <RadioButton.Foreground>
                             <SolidColorBrush Color="{DynamicResource MainTextColor}"/>
                         </RadioButton.Foreground>
@@ -159,7 +159,7 @@
                             <ImageBrush ImageSource="res/img/cross.png"/>
                         </Button.Background>
                     </Button>
-                    <RadioButton IsChecked="{Binding IsRandom}" Content="Irregular Mask" Padding="15,0,0,0" HorizontalAlignment="Left" Margin="20,253,0,0" VerticalAlignment="Top" Width="208" Height="20" Background="White" BorderBrush="White" VerticalContentAlignment="Center">
+                    <RadioButton IsChecked="{Binding IsRandom, Mode=TwoWay}" Content="Irregular Mask" Padding="15,0,0,0" HorizontalAlignment="Left" Margin="20,253,0,0" VerticalAlignment="Top" Width="208" Height="20" Background="White" BorderBrush="White" VerticalContentAlignment="Center">
                         <RadioButton.Foreground>
                             <SolidColorBrush Color="{DynamicResource MainTextColor}"/>
                         </RadioButton.Foreground>

@@ -61,7 +61,7 @@ namespace ViewModel
         public bool IsDivide { get; set; } = true;
         public bool IsLimit { get; set; } = false;
 
-        public void ApplyMask(int[][] source)
+        public void ApplyMask()
         {
 
             Mask mask;
@@ -69,8 +69,32 @@ namespace ViewModel
             else if (IsAsymmetric) mask = ToMask(AsymmetricMask, 1, 0);
             else mask = ToMask(RandomMask, 1, 1);
 
-            ImageModel sourceModel = ToImageModel(source); 
+            ImageModel sourceModel = ToImageModel(SourceModel); 
             
+            if (IsDivide) sourceModel.ApplyMaskBehaviour = new NormalizationApplyBehaviour();
+            else sourceModel.ApplyMaskBehaviour = new RangeApplyBehaviour();
+
+            ImageModel resultModel = sourceModel.ApplyMask(mask);
+            resultModel.Pixels.ForEach(it => ResultModel[it.Y][it.X] = it.Color);
+        }
+
+        public void ApplyMaskToResult()
+        {
+            Mask mask;
+            if (IsSymmetric) mask = ToMask(SymmetricMask, 2, 2);
+            else if (IsAsymmetric) mask = ToMask(AsymmetricMask, 1, 0);
+            else mask = ToMask(RandomMask, 1, 1);
+
+            ImageModel sourceModel = ToImageModel(ResultModel);
+            
+            for (var i = 0; i < ResultModel.Length; i++)
+            {
+                for (var j = 0; j < ResultModel[i].Length; j++)
+                {
+                    SourceModel[i][j] = ResultModel[i][j];
+                }
+            }
+
             if (IsDivide) sourceModel.ApplyMaskBehaviour = new NormalizationApplyBehaviour();
             else sourceModel.ApplyMaskBehaviour = new RangeApplyBehaviour();
 

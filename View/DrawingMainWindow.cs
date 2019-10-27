@@ -94,7 +94,7 @@ namespace View
             }
         }
 
-        private void DrawResult(Canvas canvas, int x, int y, byte color)
+        private void DrawImageModel(Canvas canvas, int x, int y, byte color)
         {
             int numberOfColumns = 20;
             int numberOfRows = 20;
@@ -117,14 +117,14 @@ namespace View
         {
             
             ResultCanvas.Children.Clear();
-            
+
             var context = DataContext as MainViewModel;
-            context.ApplyMask(context.SourceModel);
+            context.ApplyMask();
             for (int i = 0; i < context.ResultModel.Length; i++)
             {
                 for (int j = 0; j < context.ResultModel[i].Length; j++)
                 {
-                    DrawResult(ResultCanvas, j, i, (byte)context.ResultModel[i][j]);
+                    DrawImageModel(ResultCanvas, j, i, (byte)context.ResultModel[i][j]);
                 }
             }
         }
@@ -132,14 +132,17 @@ namespace View
         private void ApplyMaskToResult_OnClick(object sender, RoutedEventArgs e)
         {
             ResultCanvas.Children.Clear();
-            
+            DrawCanvas.Children.Clear();
+
             var context = DataContext as MainViewModel;
-            context.ApplyMask(context.ResultModel);
+            context.ApplyMaskToResult();
             for (int i = 0; i < context.ResultModel.Length; i++)
             {
                 for (int j = 0; j < context.ResultModel[i].Length; j++)
                 {
-                    DrawResult(ResultCanvas, j, i, (byte)context.ResultModel[i][j]);
+                    DrawImageModel(ResultCanvas, j, i, (byte)context.ResultModel[i][j]);
+                    DrawImageModel(DrawCanvas, j, i, (byte)context.SourceModel[i][j]);
+
                 }
             }
         }
