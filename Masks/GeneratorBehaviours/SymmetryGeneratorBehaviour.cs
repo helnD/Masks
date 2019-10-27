@@ -22,8 +22,8 @@ namespace Domain
             int x = 2;
             int y = 2;
             int numberOfColumns = 5;
-            int maxValue = 1000;
-            int minValue = -999;
+            int maxValue = 100;
+            int minValue = -30;
 
             Random rnd = new Random();
             List<MaskPixel> pixels = new List<MaskPixel>();

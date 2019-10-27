@@ -93,5 +93,55 @@ namespace View
                 }
             }
         }
+
+        private void DrawResult(Canvas canvas, int x, int y, byte color)
+        {
+            int numberOfColumns = 20;
+            int numberOfRows = 20;
+            double sizeX = (canvas.Width / numberOfColumns);
+            double sizeY = (canvas.Height / numberOfRows);
+
+            Rectangle rect = new Rectangle
+            {
+                Height = canvas.Height / numberOfRows,
+                Width = canvas.Width / numberOfColumns,
+                Fill = new SolidColorBrush(Color.FromRgb(color, color, color)),
+                Margin = new Thickness(x * sizeX + 1, y * sizeY + 1,
+                    (x + 1) * sizeX - 1, (y + 1) * sizeY - 1)
+            };
+
+            canvas.Children.Add(rect);
+        }
+
+        private void ApplyMask_OnClick(object sender, RoutedEventArgs e)
+        {
+            
+            ResultCanvas.Children.Clear();
+            
+            var context = DataContext as MainViewModel;
+            context.ApplyMask(context.SourceModel);
+            for (int i = 0; i < context.ResultModel.Length; i++)
+            {
+                for (int j = 0; j < context.ResultModel[i].Length; j++)
+                {
+                    DrawResult(ResultCanvas, j, i, (byte)context.ResultModel[i][j]);
+                }
+            }
+        }
+        
+        private void ApplyMaskToResult_OnClick(object sender, RoutedEventArgs e)
+        {
+            ResultCanvas.Children.Clear();
+            
+            var context = DataContext as MainViewModel;
+            context.ApplyMask(context.ResultModel);
+            for (int i = 0; i < context.ResultModel.Length; i++)
+            {
+                for (int j = 0; j < context.ResultModel[i].Length; j++)
+                {
+                    DrawResult(ResultCanvas, j, i, (byte)context.ResultModel[i][j]);
+                }
+            }
+        }
     }
 }

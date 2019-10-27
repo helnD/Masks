@@ -22,8 +22,8 @@ namespace Domain
             int y = 1;
             int numberOfColumns = 3;
             int numberOfRows = 6;
-            int maxValue = 1000;
-            int minValue = -999;
+            int maxValue = 100;
+            int minValue = -30;
             bool isEven = true;
 
             Random rnd = new Random();

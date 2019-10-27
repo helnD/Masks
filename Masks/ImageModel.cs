@@ -38,9 +38,9 @@ namespace Domain
 
 			List<Pixel> result = new List<Pixel>();
 			
-			for (int x = borders.Left; x <= xModelSize - borders.Right; x++)
+			for (int x = borders.Left; x < borders.Left + xModelSize; x++)
 			{
-				for (int y = borders.Top; y <= yModelSize - borders.Bottom; y++)
+				for (int y = borders.Top; y < borders.Top + yModelSize; y++)
 				{
 					var pixel = new Pixel(x - borders.Left, y - borders.Top,
 						ApplyToVirtualModel(virtualModel, x, y, mask));

@@ -26,6 +26,5 @@ namespace View
             DataContext = new MainViewModel();
             InitializeComponent();
         }
-
     }
 }
