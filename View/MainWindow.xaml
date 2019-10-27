@@ -5,39 +5,33 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:View"
         mc:Ignorable="d"
-        Title="MainWindow" Height="496.564" Width="1067.206" ResizeMode="NoResize">
+        Title="Masks" Height="516.064" Width="1104.706" ResizeMode="NoResize">
     <Grid Background="#FF1A1A1A" RenderTransformOrigin="0.244,0.475">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="365*"/>
-            <ColumnDefinition Width="328*"/>
-            <ColumnDefinition Width="368*"/>
+            <ColumnDefinition Width="396"/>
+            <ColumnDefinition Width="309"/>
+            <ColumnDefinition Width="402"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="48"/>
-            <RowDefinition Height="513"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="514"/>
         </Grid.RowDefinitions>
-        <Canvas x:Name="DrawCanvas" HorizontalAlignment="Left" Height="350" Margin="15,0,0,0" VerticalAlignment="Top" Width="350" Grid.Row="1" PreviewMouseDown="DrawCanvas_OnPreviewMouseDown" PreviewMouseMove="DrawCanvas_OnPreviewMouseMove" PreviewMouseUp="DrawCanvas_OnPreviewMouseUp">
+        <Canvas x:Name="DrawCanvas" Background="#FFFFFF" HorizontalAlignment="Left" Height="360" Margin="24,0,0,0" VerticalAlignment="Top" Width="360" Grid.Row="1" PreviewMouseDown="DrawCanvas_OnPreviewMouseDown" PreviewMouseMove="DrawCanvas_OnPreviewMouseMove" PreviewMouseUp="DrawCanvas_OnPreviewMouseUp" Initialized="DrawCanvas_OnInitialized">
             <Canvas.Effect>
                 <DropShadowEffect Color="#FF303030"/>
             </Canvas.Effect>
-            <Canvas.Background>
-                <ImageBrush ImageSource="res/img/grid1.png"/>
-            </Canvas.Background>
         </Canvas>
-        <Canvas x:Name="ResultCanvas" HorizontalAlignment="Left" Height="350" VerticalAlignment="Top" Width="350" Grid.Row="1" Grid.Column="2">
+        <Canvas x:Name="ResultCanvas" Background="#FFFFFF" HorizontalAlignment="Left" Height="360" VerticalAlignment="Top" Width="360" Grid.Row="1" Grid.Column="2" Margin="10,0,0,0" Initialized="DrawCanvas_OnInitialized">
             <Canvas.Effect>
                 <DropShadowEffect Color="#FF303030"/>
             </Canvas.Effect>
-            <Canvas.Background>
-                <ImageBrush ImageSource="res/img/grid1.png"/>
-            </Canvas.Background>
         </Canvas>
         <Label Content="Result:" VerticalAlignment="Top" Padding="10,5,0,0" Foreground="#FFD4D4D4" Height="34" Grid.Column="2" Background="#FF171717" VerticalContentAlignment="Center">
             <Label.Effect>
                 <DropShadowEffect Color="#FF0A0A0A" Direction="270" Opacity="0.5" ShadowDepth="3" BlurRadius="7"/>
             </Label.Effect>
         </Label>
-        <Label Content="Source:" HorizontalAlignment="Right" Padding="25,5,0,0" VerticalAlignment="Top" Foreground="#FFD4D4D4" Width="365" Height="34" Background="#FF171717" VerticalContentAlignment="Center">
+        <Label Content="Source:" Padding="25,5,0,0" VerticalAlignment="Top" Foreground="#FFD4D4D4" Height="34" Background="#FF171717" VerticalContentAlignment="Center">
             <Label.Effect>
                 <DropShadowEffect Color="#FF0A0A0A" Direction="270" Opacity="0.5" ShadowDepth="3" BlurRadius="7"/>
             </Label.Effect>
@@ -50,7 +44,7 @@
                 <DropShadowEffect Color="#FF0A0A0A" Direction="270" Opacity="0.5" ShadowDepth="3" BlurRadius="7"/>
             </Label.Effect>
         </Label>
-        <ScrollViewer VerticalScrollBarVisibility="Visible" Margin="0,0,10,164" Grid.Row="1" Grid.Column="1" Foreground="Black" Height="350" VerticalAlignment="Bottom">
+        <ScrollViewer VerticalScrollBarVisibility="Visible" Margin="0,0,0,154" Grid.Column="1" Foreground="Black" Grid.Row="1">
             <Grid>
                 <Label Content="Type of mask" HorizontalAlignment="Left" Margin="10,0,0,0" Grid.Row="1" VerticalAlignment="Top" Grid.Column="1" Width="285" Background="{x:Null}" FontStyle="Italic">
                     <Label.Foreground>
@@ -245,7 +239,7 @@
                 <Label Content="Type of normalization" HorizontalAlignment="Left" Margin="10,485,0,0" VerticalAlignment="Top" Width="285" Background="{x:Null}" FontStyle="Italic" Foreground="#FFD4D4D4"/>
             </Grid>
         </ScrollViewer>
-        <TextBox x:Name="BrushBrightness_textbox" HorizontalAlignment="Left" Height="27" Margin="231,7,0,0" VerticalAlignment="Top" Width="40" BorderBrush="{x:Null}" MaxLength="3" IsUndoEnabled="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
+        <TextBox x:Name="BrushBrightness_textbox" HorizontalAlignment="Left" Height="26" Margin="188,4,0,0" VerticalAlignment="Top" Width="40" BorderBrush="{x:Null}" MaxLength="3" IsUndoEnabled="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
             <TextBox.Text>
                 <Binding Path="BrushBrightness" UpdateSourceTrigger="PropertyChanged">
                     <Binding.ValidationRules>
@@ -254,10 +248,22 @@
                 </Binding>
             </TextBox.Text>
         </TextBox>
-        <Label Content="Brush brightness: " HorizontalAlignment="Left" Margin="127,8,0,0" VerticalAlignment="Top" Foreground="#FFD4D4D4" Height="26" Width="104"/>
-        <Button Content="Clear" Style="{StaticResource ButtonBaseStyle}" PreviewMouseDown="ClearCanvasButton_OnPreviewMouseDown" HorizontalAlignment="Left" Margin="287,7,0,0" VerticalAlignment="Top" Width="72" Height="26" BorderBrush="#FFD4D4D4" HorizontalContentAlignment="Center" Foreground="#FFD4D4D4" Background="{x:Null}"/>
-        <Button Content="Apply mask" Click="ApplyMask_OnClick" Style="{StaticResource ButtonBaseStyle}" Margin="6,364,6,0" VerticalAlignment="Top" Height="26" BorderBrush="#FFD4D4D4" Grid.Row="1" HorizontalContentAlignment="Center" Foreground="#FFD4D4D4" Background="{x:Null}" Grid.Column="1"/>
-        <Button Content="Apply mask to result" Click="ApplyMaskToResult_OnClick" Style="{StaticResource ButtonBaseStyle}" HorizontalAlignment="Left" Margin="205,4,0,0" VerticalAlignment="Top" Width="145" Height="26" BorderBrush="#FFD4D4D4" HorizontalContentAlignment="Center" Foreground="#FFD4D4D4" Background="{x:Null}" Grid.Column="2"/>
+        <Button Content="Clear" Style="{StaticResource ButtonBaseStyle}" PreviewMouseDown="ClearCanvasButton_OnPreviewMouseDown" HorizontalAlignment="Left" Margin="318,4,0,0" VerticalAlignment="Top" Width="66" Height="26" BorderBrush="#FFD4D4D4" HorizontalContentAlignment="Center" Foreground="#FFD4D4D4" Background="{x:Null}"/>
+        <Button Content="Apply mask" Click="ApplyMask_OnClick" Style="{StaticResource ButtonBaseStyle}" Margin="6,368,6,0" VerticalAlignment="Top" Height="26" BorderBrush="#FFD4D4D4" Grid.Row="1" HorizontalContentAlignment="Center" Foreground="#FFD4D4D4" Background="{x:Null}" Grid.Column="1"/>
+        <Button Content="Apply mask to result" Click="ApplyMaskToResult_OnClick" Style="{StaticResource ButtonBaseStyle}" HorizontalAlignment="Left" Margin="225,4,0,0" VerticalAlignment="Top" Width="145" Height="26" BorderBrush="#FFD4D4D4" HorizontalContentAlignment="Center" Foreground="#FFD4D4D4" Background="{x:Null}" Grid.Column="2"/>
+        <Label HorizontalAlignment="Left" Margin="128,-1,0,0" VerticalAlignment="Top" Foreground="#FFD4D4D4" Height="41" Width="60">
+            <TextBlock TextWrapping="WrapWithOverflow" FontSize="10" Width="57">
+                Brush brightness:
+            </TextBlock>
+        </Label>
+        <CheckBox Name="ShowValuesCheckBox" Click="ShowValuesCheckBox_OnClick" HorizontalAlignment="Left" Margin="250,4,0,0" VerticalAlignment="Top" Width="56" FlowDirection="RightToLeft" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" BorderBrush="{x:Null}" Height="26">
+            <CheckBox.Foreground>
+                <SolidColorBrush Color="{DynamicResource MainTextColor}"/>
+            </CheckBox.Foreground>
+            <TextBlock TextWrapping="WrapWithOverflow" FontSize="10" Width="30" FlowDirection="LeftToRight">
+                Show values
+            </TextBlock>
+        </CheckBox>
 
     </Grid>
 </Window>

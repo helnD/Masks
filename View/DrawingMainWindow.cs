@@ -1,4 +1,6 @@
-﻿using System.Windows;
+﻿using System;
+using System.Linq;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
@@ -34,6 +36,69 @@ namespace View
             };
 
             canvas.Children.Add(rect);
+            if (ShowValuesCheckBox.IsChecked == true)
+            {
+                canvas.Children.Add(new Label()
+                {
+                    Content = context.SourceModel[(int) (y / sizeY)][(int) (x / sizeX)],
+                    Margin = new Thickness(marginLeft - 3, marginTop - 3, 0, 0),
+                    Foreground = GetFontColor(context.SourceModel[(int) (y / sizeY)][(int) (x / sizeX)]),
+                    FontSize = 9,
+                    HorizontalContentAlignment = HorizontalAlignment.Left,
+                    VerticalContentAlignment = VerticalAlignment.Center
+                });
+            }
+        }
+
+        private Brush GetFontColor(int colorBrightness)
+        {
+            if (colorBrightness < 127)
+            {
+                return Brushes.White;
+            }
+            else
+            {
+                return Brushes.Black;
+            }
+        }
+
+        private void DrawGrid(Canvas canvas)
+        {
+            int numberOfColumns = 20;
+            int numberOfRows = 20;
+            double sizeX = (canvas.Width / numberOfColumns);
+            double sizeY = (canvas.Height / numberOfRows);
+            
+            for (int i = 1; i < numberOfColumns; i++)
+            {
+                Line line = new Line
+                {
+                    X1 = sizeX * i,
+                    Y1 = canvas.Margin.Top,
+                    X2 = sizeX * i,
+                    Y2 = canvas.Height + canvas.Margin.Top,
+                    Stroke = Brushes.DarkGray,
+                    StrokeThickness = 0.5,
+                    StrokeDashArray = {6, 3}
+                };
+                Panel.SetZIndex(line, 10);
+                canvas.Children.Add(line);
+            }
+            for (int i = 1; i < numberOfRows; i++)
+            {
+                Line line = new Line
+                {
+                    Y1 = sizeX * i,
+                    X1 = canvas.Margin.Top,
+                    Y2 = sizeX * i,
+                    X2 = canvas.Width + canvas.Margin.Top,
+                    Stroke = Brushes.DarkGray,
+                    StrokeThickness = 0.5,
+                    StrokeDashArray = {6, 3}
+                };
+                Panel.SetZIndex(line, 10);
+                canvas.Children.Add(line);
+            }
         }
 
         private void DrawCanvas_OnPreviewMouseDown(object sender, MouseButtonEventArgs e)
@@ -82,7 +147,8 @@ namespace View
 
         private void ClearCanvasButton_OnPreviewMouseDown(object sender, MouseButtonEventArgs e)
         {
-            DrawCanvas.Children.Clear();
+            RemoveRectangles(DrawCanvas);
+            RemoveRectangles(ResultCanvas);
             
             var context = DataContext as MainViewModel;
             for (int i = 0; i < 20; i++)
@@ -90,6 +156,66 @@ namespace View
                 for (int j = 0; j < 20; j++)
                 {
                     context.SourceModel[i][j] = 255;
+                    context.ResultModel[i][j] = 255;
+                }
+            }
+        }
+
+        private void DrawCanvas_OnInitialized(object sender, EventArgs e)
+        {
+            DrawGrid(sender as Canvas);
+        }
+
+        private void ShowValuesCheckBox_OnClick(object sender, RoutedEventArgs e)
+        {
+            RemoveLabels(DrawCanvas);
+            RemoveLabels(ResultCanvas);
+            
+            if (ShowValuesCheckBox.IsChecked == true)
+            {
+                var context = DataContext as MainViewModel;
+                DrawLabels(DrawCanvas, context.SourceModel);
+                DrawLabels(ResultCanvas, context.ResultModel);
+            }
+        }
+
+        private void RemoveLabels(Canvas canvas)
+        {
+            for (int i = canvas.Children.Count - 1; i >= 0; i--)
+            {
+                if (canvas.Children[i] is Label)
+                {
+                    canvas.Children.RemoveAt(i);
+                }
+            }
+        }
+        
+        private void DrawLabels(Canvas canvas, int[][] model)
+        {
+            int numberOfColumns = 20;
+            int numberOfRows = 20;
+            double sizeX = (canvas.Width / numberOfColumns);
+            double sizeY = (canvas.Height / numberOfRows);
+            
+            for (int i = 0; i < model.Length; i++)
+            {
+                for (int j = 0; j < model[i].Length; j++)
+                {
+                    if (model[i][j] != 255)
+                    {
+                        double marginLeft = j * sizeX;
+                        double marginTop = i * sizeY;
+                                
+                        canvas.Children.Add(new Label()
+                        {
+                            Content = model[i][j],
+                            Margin = new Thickness(marginLeft - 3, marginTop - 3, 0, 0),
+                            Foreground = GetFontColor(model[i][j]),
+                            FontSize = 9,
+                            HorizontalContentAlignment = HorizontalAlignment.Left,
+                            VerticalContentAlignment = VerticalAlignment.Center
+                        });
+                    }
                 }
             }
         }
@@ -115,8 +241,7 @@ namespace View
 
         private void ApplyMask_OnClick(object sender, RoutedEventArgs e)
         {
-            
-            ResultCanvas.Children.Clear();
+            RemoveRectangles(ResultCanvas);
 
             var context = DataContext as MainViewModel;
             context.ApplyMask();
@@ -127,12 +252,15 @@ namespace View
                     DrawImageModel(ResultCanvas, j, i, (byte)context.ResultModel[i][j]);
                 }
             }
+            
+            if (ShowValuesCheckBox.IsChecked == true)
+                DrawLabels(ResultCanvas, context.ResultModel);
         }
         
         private void ApplyMaskToResult_OnClick(object sender, RoutedEventArgs e)
         {
-            ResultCanvas.Children.Clear();
-            DrawCanvas.Children.Clear();
+            RemoveRectangles(DrawCanvas);
+            RemoveRectangles(ResultCanvas);
 
             var context = DataContext as MainViewModel;
             context.ApplyMaskToResult();
@@ -144,6 +272,21 @@ namespace View
                     DrawImageModel(DrawCanvas, j, i, (byte)context.SourceModel[i][j]);
 
                 }
+            }
+
+            if (ShowValuesCheckBox.IsChecked == true)
+            {
+                DrawLabels(DrawCanvas, context.SourceModel);
+                DrawLabels(ResultCanvas, context.ResultModel); 
+            }
+        }
+
+        private void RemoveRectangles(Canvas canvas)
+        {
+            for (int i = canvas.Children.Count - 1; i >= 0; i--)
+            {
+                if (canvas.Children[i] is Rectangle || canvas.Children[i] is Label) 
+                    canvas.Children.RemoveAt(i);
             }
         }
     }
