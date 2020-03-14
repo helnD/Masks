@@ -1,19 +1,15 @@
 ﻿{
   "version": "1.0.0",
   "restore": {
-    "projectUniqueName": "C:\\Users\\Владимир\\RiderProjects\\Masks\\Masks\\Masks.csproj",
+    "projectUniqueName": "C:\\Users\\1\\RiderProjects\\Masks\\Masks\\Masks.csproj",
     "projectName": "Masks",
-    "projectPath": "C:\\Users\\Владимир\\RiderProjects\\Masks\\Masks\\Masks.csproj",
-    "outputPath": "C:\\Users\\Владимир\\RiderProjects\\Masks\\Masks\\obj\\",
+    "projectPath": "C:\\Users\\1\\RiderProjects\\Masks\\Masks\\Masks.csproj",
+    "outputPath": "C:\\Users\\1\\RiderProjects\\Masks\\Masks\\obj\\",
     "projectStyle": "PackageReference",
-    "fallbackFolders": [
-      "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-    ],
     "originalTargetFrameworks": [
       "netstandard2.0"
     ],
     "sources": {
-      "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
       "https://api.nuget.org/v3/index.json": {}
     },
     "frameworks": {

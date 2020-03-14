@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\Владимир\.Rider2019.2\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\Владимир\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_Masks.1457435572.00" t="ExcludeRecursive" />
-    <e p="C:\Users\Владимир\RiderProjects\Masks" t="IncludeFlat">
+    <e p="C:\Users\1\.Rider2019.2\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\1\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_Masks.-2106043072.00" t="ExcludeRecursive" />
+    <e p="C:\Users\1\RiderProjects\Masks" t="IncludeFlat">
       <e p="Masks" t="IncludeRecursive">
         <e p="ApplyBehaviour" t="Include">
           <e p="IApplyBehaviour.cs" t="Include" />
